@@ -1,8 +1,7 @@
-# onitama
+# Onitama
 Japanese Chess Game
 
-## description
-A computer version of the board game Onitama. Onitama is a strategic board game for two created in 2014 by Japanese game designer Shimpei Sato and launched by Arcane Wonders. It is thematically based on the different fighting styles of Japanese martial arts (https://en.wikipedia.org/wiki/Onitama).
+## Description
 
 Onitama is a two-player game based off the mechanics of chess. It is simplified down to a 5x5 board, both players start with four pawns on their side, with the King in the middle.
 
@@ -11,24 +10,14 @@ Each player has two open cards that each display a possible move for any of his 
 Moving onto one of the opponent's pawns removes that pawn from the game. Taking the opponent's main pawn, or moving your main pawn into your opponent's main pawn's starting space, wins you the game.
 
 
-## support
+## Support
 @mnotley or @rhartendorp
 
-## roadmap
+## Roadmap
 Building Onitama should be broken down into components which can be put together to create the game. By doing this we eliminate unnecessary dependencies that could block or slow down coding the project. Going off of TrippW’s implementation of the game in Git and this implementation we can see what the breakdown of the components will look like for us.
 
 
-### components
+### Components
 
-Board
-Cards
-Deck of Cards
-Pieces
-Player
-GUI
-Board including pieces
-Cards
-Onitama Rules
-Movements
-Menus
+Board, Cards, Deck of Cards, Pieces, Player, GUI, Board including pieces, Cards, Onitama Rules, Movements, Menus
 
