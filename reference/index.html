@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<!--Hello, everyone! This is my very first coding project.--> 
+ 
+<!--I will eventually come back to this code to implement some new features.--> 
+
+<!--This project is directly based off of the wonderful game 'Onitama' designed by Shimpei Sato and published by Arcane Wonders-->
+
+<!--Code by Christian Barraza--> 
+
+<html>
+    <head>
+        <title>Onitama</title>
+        <!--Jquery-->
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <script src="board.js"></script>
+        <!--Julee Font-->
+        <link href="https://fonts.googleapis.com/css?family=Julee" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id='rules'>Rules</div>
+        <!--Meant for giving instruction to the player without using a console-->
+        <div id='instructions'>Onitama</div>
+        <!--'#board' Div containing 25 smaller 'square' Divs-->
+        <div id='board'>
+            <!--Blue player's starting sqaures, each containing the appropriate starting piece-->
+            <!--Each piece has an empty space (" ") in its content-->
+            <!--This is the AI player (P1)-->
+            <div class='square' id="square0"><div class="studentP1" id="student0"> </div></div>
+            <div class='square' id="square1"><div class="studentP1" id="student1"> </div></div>
+            <div class='square' id="square2"><div class="masterP1" id="master0"> </div></div>
+            <div class='square' id="square3"><div class="studentP1" id="student2"> </div></div>
+            <div class='square' id="square4"><div class="studentP1" id="student3"> </div></div>
+            <!--15 empty squares between blue starting squares and orange starting squares-->
+            <div class='square' id="square5"></div>
+            <div class='square' id="square6"></div>
+            <div class='square' id="square7"></div>
+            <div class='square' id="square8"></div>
+            <div class='square' id="square9"></div>
+            <div class='square' id="square10"></div>
+            <div class='square' id="square11"></div>
+            <div class='square' id="square12"></div>
+            <div class='square' id="square13"></div>
+            <div class='square' id="square14"></div>
+            <div class='square' id="square15"></div>
+            <div class='square' id="square16"></div>
+            <div class='square' id="square17"></div>
+            <div class='square' id="square18"></div>
+            <div class='square' id="square19"></div>
+            <!--Orange player's starting sqaures, each containing the appropriate starting piece-->
+            <!--Each piece has an empty space (" ") in its content-->
+            <!--This is the human player (P2)-->
+            <div class='square' id="square20"><div class="studentP2" id="student4"> </div></div>
+            <div class='square' id="square21"><div class="studentP2" id="student5"> </div></div>
+            <div class='square' id="square22"><div class="masterP2" id="master1"> </div></div>
+            <div class='square' id="square23"><div class="studentP2" id="student6"> </div></div>
+            <div class='square' id="square24"><div class="studentP2" id="student7"> </div></div> 
+        </div>
+        <div id='restart'>Reset</div>
+        <!--Meant for giving info to the the player without using a console-->
+        <div id='info'>It is your turn.</div>
+        <!--Divs to contain movement cards that are out of a player's hand (never more than 1)-->
+        <!--Cards will travel from '#next2' to '#handP2' to '#next1' to '#handP1' and so on in a circle-->
+        <!--'#next2' should start with a card, while '#next1' should be empty because P2 is playing first-->
+        <div class="next" id="next1"></div>
+        <div class="next" id="next2"></div>
+        <!--Divs to contain movement cards that are in a player's hand (never more than 2)-->
+        <div class="hand" id="handP1"></div>
+        <div class="hand" id="handP2"></div>
+    </body>
+</html>
+
+<!-- Code by Christian Barraza -->

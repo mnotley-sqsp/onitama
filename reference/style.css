@@ -1,0 +1,436 @@
+/* Code by Christian Barraza */
+
+body {
+    background-color: #bd9658;
+    background-color: rgba(189, 150, 88, 0.3);
+    /*background-image: url(http://www.arcanewonders.com/wp-content/uploads/2015/10/Onitama-Logo.png);*/
+    background-repeat: no-repeat;
+    /*background-position: center;*/
+}
+
+.next
+{
+    border: 1px dotted black;
+    cursor: pointer;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    width: 124px;
+    height: 15%;
+}
+
+.hand
+{
+    border: 1px dotted;
+    cursor: pointer;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    width: 256px;
+    height: 15%;
+}
+
+.square 
+{
+    display: inline-block;
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    margin: -2px;
+}
+
+.studentP1
+{
+    /*background-image: url(http://i.imgur.com/6JEgVel.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;*/
+    background-color: #5e9bff;
+    border: 1px solid black;
+    border-radius: 100%; /*Gives the pieces the circular shape*/
+    height: 30px;
+    width: 30px;
+    box-shadow: 1px 1px 1px;
+    margin: 8px 0 0 8px;
+}
+
+.studentP2
+{
+    /*background-image: url(http://i.imgur.com/6JEgVel.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px*/
+    background-color: #f7a44c;
+    border: 1px solid black;
+    border-radius: 100%; /*Gives the pieces the circular shape*/
+    height: 30px;
+    width: 30px;
+    box-shadow: 1px 1px 1px;
+    margin: 8px 0 0 8px;
+}
+
+.masterP1
+{
+    background-image: url(http://i.imgur.com/uKjyPRT.png);
+    background-repeat: no-repeat;
+    background-position: 6px 4px;
+    background-size: 30px;
+    background-color: #5e9bff;
+    border: 2px solid black;
+    border-radius: 100%; /*Gives the pieces the circular shape*/
+    height: 43px;
+    width: 43px;
+    box-shadow: 1px 1px 1px;
+    margin: 1px 0 0 1px;
+}
+
+.masterP2
+{
+    background-image: url(http://i.imgur.com/uKjyPRT.png);
+    background-repeat: no-repeat;
+    background-position: 6px 4px;
+    background-size: 30px;
+    background-color: #f7a44c;
+    border: 2px solid black;
+    border-radius: 100%; /*Gives the pieces the circular shape*/
+    height: 43px;
+    width: 43px;
+    box-shadow: 1px 1px 1px;
+    margin: 1px 0 0 1px;
+}
+
+.movementCard
+{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Julee', cursive;
+    width: 100px;
+    height: 100%;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #bd9658;
+    display: inline-block;
+    margin-left: 15px;
+    box-shadow: 1px 1px 1px;
+}
+
+.next .movementCard
+{
+    pointer-events: none; /*Keeps the player from clicking on cards in the 'next' divs*/
+}
+
+.square:hover
+{
+    background-color: #bd9658;
+    background-color: rgba(189, 150, 88, 0.7);
+}
+
+.studentP1:hover, .masterP1:hover
+{
+    box-shadow: 2px 2px 1px;
+    background-color: #476cff;
+}
+
+.studentP2:hover, .masterP2:hover
+{
+    box-shadow: 2px 2px 1px;
+    background-color: #ff7e44;    
+}
+
+#restart
+{
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    left: 91%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #bd9658;
+    background-color: rgba(189, 150, 88, 0.5);
+    border-radius: 100%;
+    box-shadow: 1px 1px 1px;
+    text-align: center;
+    color: brown;
+    font-family: 'Julee', cursive;
+    line-height: 60px;
+    z-index: -2;
+}
+
+#restart:active
+{
+    box-shadow: 0 0 0;
+}
+
+#rules
+{
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    left: 9%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #bd9658;
+    background-color: rgba(189, 150, 88, 0.5);
+    border-radius: 100%;
+    box-shadow: 1px 1px 1px;
+    text-align: center;
+    color: brown;
+    font-family: 'Julee', cursive;
+    line-height: 60px;
+    z-index: -2;
+}
+
+#rules:active
+{
+    box-shadow: 0 0 0;
+}
+
+#handP1 .movementCard
+{
+    transform: rotate(180deg);
+}
+
+#board
+{
+    border: 3px solid black;
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 3px 3px 3px;
+    background-color: #bd9658;
+    background-color: rgba(189, 150, 88, 0.5);
+    width: 256px;
+    height: 256px;
+    background-image: url(http://www.arcanewonders.com/wp-content/uploads/2015/10/Onitama-Logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#instructions
+{
+    position: fixed;
+    width: 256px;
+    height: 40px;
+    text-align: center;
+    top: 81%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 40px;
+    color: brown;
+    font-family: 'Julee', cursive;
+}
+
+#info
+{
+    position: fixed;
+    width: 256px;
+    height: 40px;
+    text-align: center;
+    top: 19%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 40px;
+    color: brown;
+    font-family: 'Julee', cursive;
+    z-index: -1;
+}
+
+#next1
+{
+    top: 91%;
+    left: 13%;
+}
+
+#next2
+{
+    top: 9%;
+    left: 87%;
+}
+
+#handP1 
+{
+    top: 9%;
+    left: 25%;
+    border-color: #5e9bff;
+    pointer-events: none; /*Keeps the player from clicking on cards in the AIs hand*/
+}
+
+#handP2 
+{
+    top: 91%;
+    left: 75%;
+    border-color: #f7a44c;
+}
+
+#square2 /*P1's shrine. If P2 gets their master to this square, P2 wins*/
+{
+    background-color: #5e9bff;
+    background-color: rgba(94, 155, 255, 0.7);
+}
+
+#square22 /*P2's shrine. If P1 gets their master to this square, P1 wins*/
+{
+    background-color: #f7a44c;
+    background-color: rgba(247, 164, 76, 0.7);
+}
+
+#eel
+{
+    background-image: url(http://i.imgur.com/urM2DN3.png);
+}
+
+#crab
+{
+    background-image: url(http://i.imgur.com/LtDcuYF.png);
+}
+
+#rabbit
+{
+    background-image: url(http://i.imgur.com/T5EViaM.png);
+}
+
+#dragon
+{
+    background-image: url(http://i.imgur.com/7SFSH83.png);
+}
+
+#cobra
+{
+    background-image: url(http://i.imgur.com/L32qD2Q.png);
+}
+
+#goose
+{
+    background-image: url(http://i.imgur.com/V4pKgVf.png);
+}
+
+#ox
+{
+    background-image: url(http://i.imgur.com/48aHnt7.png);
+}
+
+#monkey
+{
+    background-image: url(http://i.imgur.com/7NPdfYu.png);
+}
+
+#tiger
+{
+    background-image: url(http://i.imgur.com/Tjr9Nju.png);
+}
+
+#mantis
+{
+    background-image: url(http://i.imgur.com/EakW7cq.png);
+}
+#elephant
+{
+    background-image: url(http://i.imgur.com/D9qKbn9.png);
+}
+
+#boar
+{
+    background-image: url(http://i.imgur.com/KxPw2q5.png);
+}
+
+#frog
+{
+    background-image: url(http://i.imgur.com/0ycsZ0y.png);
+}
+
+#horse
+{
+    background-image: url(http://i.imgur.com/MC5OjcV.png);
+}
+
+#rooster
+{
+    background-image: url(http://i.imgur.com/KQKH26o.png);
+}
+#crane
+{
+    background-image: url(http://i.imgur.com/9iI0BBj.png);
+}
+
+#rat
+{
+    background-image: url(http://i.imgur.com/UQDV8S7.png);
+}
+
+#turtle
+{
+    background-image: url(http://i.imgur.com/GIBqqY9.png);
+}
+
+#iguana
+{
+    background-image: url(http://i.imgur.com/FncuB5X.png);
+}
+
+#viper
+{
+    background-image: url(http://i.imgur.com/We8orlZ.png);
+}
+
+#giraffe
+{
+    background-image: url(http://i.imgur.com/8h881rC.png);
+}
+
+#mouse
+{
+    background-image: url(http://i.imgur.com/TtQcZLm.png);
+}
+
+#fox
+{
+    background-image: url(http://i.imgur.com/cVbRvvk.pngg);
+}
+
+#tanuki
+{
+    background-image: url(http://i.imgur.com/GkpUeOB.png);
+}
+
+#seaSnake
+{
+    background-image: url(http://i.imgur.com/M7LDSnn.png);
+}
+
+#sable
+{
+    background-image: url(http://i.imgur.com/a0qyP8p.png);
+}
+
+#otter
+{
+    background-image: url(http://i.imgur.com/1Il3oA1.png);
+}
+
+#phoenix
+{
+    background-image: url(http://i.imgur.com/xy3gMGr.png);
+}
+
+#kirin
+{
+    background-image: url(http://i.imgur.com/H2N1hNn.png);
+}
+
+#bear
+{
+    background-image: url(http://i.imgur.com/HJ4bu0z.png);
+}
+
+#dog
+{
+    background-image: url(http://i.imgur.com/rKLXosu.png);
+}
+
+#panda
+{
+    background-image: url(http://i.imgur.com/JBrcCc5.png);
+}
