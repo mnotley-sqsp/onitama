@@ -148,6 +148,78 @@ class CardList {
     
     }
 
+    shuffleCards() {
+        
+        getRandomNumber = function(min, max){
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        let randNumber = getRandomNumber(1, 32);
+        this.cardNames = [
+            {name:$("<div class='movementCard' id='crab'>Crab</div>")},
+            {name:$("<div class='movementCard' id='eel'>Eel</div>")}
+            {name:$("<div class='movementCard' id='rabbit'>Rabbit</div>")},
+            {name:$("<div class='movementCard' id='crane'>Crane</div>")},
+            {name:$("<div class='movementCard' id='goose'>Goose</div>")},
+            {name:$("<div class='movementCard' id='ox'>Ox</div>")},
+            {name:$("<div class='movementCard' id='monkey'>Monkey</div>")},
+            {name:$("<div class='movementCard' id='crane'>Tiger</div>")},
+            {name:$("<div class='movementCard' id='rooster'>Rooster</div>")},
+            {name:$("<div class='movementCard' id='frog'>Frog</div>")},
+            {name:$("<div class='movementCard' id='mantis'>Mantis</div>")},
+            {name:$("<div class='movementCard' id='horse'>Horse</div>")},
+            {name:$("<div class='movementCard' id='elephant'>Elephant</div>")},
+            {name:$("<div class='movementCard' id='dragon'>Dragon</div>")},
+            {name:$("<div class='movementCard' id='cobra'>Cobra</div>")},
+            {name:$("<div class='movementCard' id='boar'>Boar</div>")},
+            {name:$("<div class='movementCard' id='bear'>Bear</div>")},
+            {name:$("<div class='movementCard' id='panda'>Panda</div>")},
+            {name:$("<div class='movementCard' id='otter'>Otter</div>")},
+            {name:$("<div class='movementCard' id='sable'>Sable</div>")},
+            {name:$("<div class='movementCard' id='dog'>Dog</div>")},
+            {name:$("<div class='movementCard' id='fox'>Fox</div>")},
+            {name:$("<div class='movementCard' id='mouse'>Mouse</div>")},
+            {name:$("<div class='movementCard' id='rat'>Rat</div>")},
+            {name:$("<div class='movementCard' id='tanuki'>Tanuki</div>")},
+            {name:$("<div class='movementCard' id='iguana'>Iguana</div>")},
+            {name:$("<div class='movementCard' id='seasnake'>SeaSnake</div>")},
+            {name:$("<div class='movementCard' id='viper'>Viper</div>")},
+            {name:$("<div class='movementCard' id='giraffe'>Giraffe</div>")},
+            {name:$("<div class='movementCard' id='kirin'>Kirin</div>")},
+            {name:$("<div class='movementCard' id='phoenix'>Phoenix</div>")},
+            {name:$("<div class='movementCard' id='turtle'>Turtle</div>")},
+        ]
+
+        const randomCard = cardNames[randNumber].name;
+        return randomCard;
+        
+    }
+
+    placeCards = function() {
+            
+        shuffleCards();
+        
+        $(randomCard).appendTo('#handP1');
+        
+        shuffleCards();
+        
+        $(randomCard).appendTo('#handP1');
+        
+        shuffleCards();
+        
+        $(randomCard).appendTo('#handP2');
+        
+        shuffleCards();
+        
+        $(randomCard).appendTo('#handP2');
+        
+        shuffleCards();
+        
+        $(randomCard).appendTo('#next2');
+    
+    }
+
+    
 }
 
 
