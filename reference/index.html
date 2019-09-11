@@ -13,7 +13,10 @@
         <title>Onitama</title>
         <!--Jquery-->
         <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-        <script src="board.js"></script>
+        <script src="start_game.js"></script>
+        <script src="turns.js"></script>
+        <script src="cards.js"></script>
+
         <!--Julee Font-->
         <link href="https://fonts.googleapis.com/css?family=Julee" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
@@ -24,7 +27,7 @@
     <body>
         <div id='rules'>Rules</div>
         <!--Meant for giving instruction to the player without using a console-->
-        <div id='instructions'>Onitama</div>
+        <div id='instructions'></div>
         <!--'#board' Div containing 25 smaller 'square' Divs-->
         <div id='board'>
             <!--Blue player's starting sqaures, each containing the appropriate starting piece-->
@@ -62,7 +65,7 @@
         </div>
         <div id='restart'>Reset</div>
         <!--Meant for giving info to the the player without using a console-->
-        <div id='info'>It is your turn.</div>
+        <div id='info'></div>
         <!--Divs to contain movement cards that are out of a player's hand (never more than 1)-->
         <!--Cards will travel from '#next2' to '#handP2' to '#next1' to '#handP1' and so on in a circle-->
         <!--'#next2' should start with a card, while '#next1' should be empty because P2 is playing first-->
@@ -71,7 +74,23 @@
         <!--Divs to contain movement cards that are in a player's hand (never more than 2)-->
         <div class="hand" id="handP1"></div>
         <div class="hand" id="handP2"></div>
+        <div id="error_message"></div>
     </body>
-</html>
+        <script type="text/javascript">
+        
+        //Starts a new game at load.//
+        let start = new startGame;      
+        start.noMoves();
+        start.newBoard();
+        start.initPieces();
+        $('#error_message').text('We Here!');
+        //Gets cards ready for game.//
+        let cards = new CardList;
+        cards.placeCards();
+        //Starts the turn.//
+        let turns = new startTurn();
+        //turns.playerAlert();
 
-<!-- Code by Christian Barraza -->
+        </script>
+    
+</html>
