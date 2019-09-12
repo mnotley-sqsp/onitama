@@ -1,67 +1,66 @@
-<!DOCTYPE html>
 <html>
     <head>
-    <title>Onitama, a Japanese Chess Game</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="board.js"></script>
-
-        <title>LET'S PLAY ONITAMA</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
-        <link href="play.css" rel="stylesheet">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-        <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
-        <link rel="icon" href="favicon.png" type="image/x-icon">
+        <title>Onitama</title>
+        <!--JavaScript-->
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
         <script src="board.js"></script>
-
+        <script src="cards.js"></script>
+        <!--CSS-->
+        <link href="style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">ß
     </head>
+
     <body>
-        <center>
-        <h2>Let's play a game....</h2></center>
-
-        <div class="column">
-            <div class="info">
-              <h1>ONITAMA</h1>
-              
-              <p>Made by bearby & mnotley-sqsp for nyc code camp 2020<br><br>
-                  <hr>
-<br>
-
-<p> Onitama is a two-player game based off the mechanics of chess. It is simplified down to a 5x5 board, both players start with four pawns on their side, with the King in the middle.
-<br><br>
-    Each player has two open cards that each display a possible move for any of his pieces. There is a fifth card that cannot be used by either player. On a player's turn, he chooses one of his cards, moves one of his pieces according to the chosen card, then replaces the card he used with the fifth card. The other player then chooses one of his cards, moves accordingly, and exchanges that card with this fifth card — which is, of course, the card the first player just used.
-<br><br>    
-    Moving onto one of the opponent's pawns removes that pawn from the game. Taking the opponent's main pawn, or moving your main pawn into your opponent's main pawn's starting space, wins you the game.</p>
-
-              </p>
-            </div>
-            <div class="stats">
-              <h2>Game Statistics</h2>
-              <div class="wrapper">
-              <div id="player1">
-                <h3>Player 1 (Top)</h3>
-              </div>
-              <div id="player2">
-                <h3>Player 2 (Bottom)</h3>
-              </div>
-              </div>
-              <div class="clearfix"></div>
-              <div class="turn"></div>
-              <span id="winner"></span>
-              <button id="cleargame">Reset Game</button>
-            </div>
-          </div>
-          <div class="column">
-            <div id="board">
-              <div class="tiles"></div>
-              <div class="pieces">
-                <div class="player1pieces">
-                </div>
-                <div class="player2pieces">
-                </div>
-              </div>
-          </div>
-
+        <div id='rules'>Rules</div>
+        <!--Meant for giving instruction to the player without using a console-->
+        <div id='instructions'>Onitama</div>
+        <!--'#board' Div containing 25 smaller 'square' Divs-->
+        <div id='board'>
+            <!--Blue player's starting sqaures, each containing the appropriate starting piece-->
+            <!--Each piece has an empty space (" ") in its content-->
+            <!--This is the AI player (P1)-->
+            <div class='square' id="square0"><div class="studentP1" id="student0"> </div></div>
+            <div class='square' id="square1"><div class="studentP1" id="student1"> </div></div>
+            <div class='square' id="square2"><div class="masterP1" id="master0"> </div></div>
+            <div class='square' id="square3"><div class="studentP1" id="student2"> </div></div>
+            <div class='square' id="square4"><div class="studentP1" id="student3"> </div></div>
+            <!--15 empty squares between blue starting squares and orange starting squares-->
+            <div class='square' id="square5"></div>
+            <div class='square' id="square6"></div>
+            <div class='square' id="square7"></div>
+            <div class='square' id="square8"></div>
+            <div class='square' id="square9"></div>
+            <div class='square' id="square10"></div>
+            <div class='square' id="square11"></div>
+            <div class='square' id="square12"></div>
+            <div class='square' id="square13"></div>
+            <div class='square' id="square14"></div>
+            <div class='square' id="square15"></div>
+            <div class='square' id="square16"></div>
+            <div class='square' id="square17"></div>
+            <div class='square' id="square18"></div>
+            <div class='square' id="square19"></div>
+            <!--Orange player's starting sqaures, each containing the appropriate starting piece-->
+            <!--Each piece has an empty space (" ") in its content-->
+            <!--This is the human player (P2)-->
+            <div class='square' id="square20"><div class="studentP2" id="student4"> </div></div>
+            <div class='square' id="square21"><div class="studentP2" id="student5"> </div></div>
+            <div class='square' id="square22"><div class="masterP2" id="master1"> </div></div>
+            <div class='square' id="square23"><div class="studentP2" id="student6"> </div></div>
+            <div class='square' id="square24"><div class="studentP2" id="student7"> </div></div>
+        </div>
+        <div id='restart'>Reset</div>
+        <!--Meant for giving info to the the player without using a console-->
+        <div id='info'>It is your turn.</div>
+        <!--Divs to contain movement cards that are out of a player's hand (never more than 1)-->
+        <!--Cards will travel from '#next2' to '#handP2' to '#next1' to '#handP1' and so on in a circle-->
+        <!--'#next2' should start with a card, while '#next1' should be empty because P2 is playing first-->
+        <div class="next" id="next1"></div>
+        <div class="next" id="next2"></div>
+        <!--Divs to contain movement cards that are in a player's hand (never more than 2)-->
+        <div class="hand" id="handP1"></div>
+        <div class="hand" id="handP2"></div>
     </body>
 </html>
+
+<!-- Code by Christian Barraza -->
