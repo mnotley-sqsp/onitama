@@ -1,5 +1,3 @@
-/* Code by Christian Barraza */
-
 body {
   background-color: #c1c1c1;
   background-color: rgba(189, 150, 88, 0.3);
@@ -10,7 +8,7 @@ body {
 
 .next
 {
-  border: 1px dotted black;
+  border: 1px black;
   cursor: pointer;
   position: fixed;
   transform: translate(-50%, -50%);
@@ -20,7 +18,7 @@ body {
 
 .hand
 {
-  border: 1px dotted;
+  border: 1px ;
   cursor: pointer;
   position: fixed;
   transform: translate(-50%, -50%);
@@ -43,9 +41,9 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;*/
-  background-color: #5e9bff;
+  background-color: #0062ff;
   border: 1px solid black;
-  border-radius: 100%; /*Gives the pieces the circular shape*/
+  border-radius: 50%; 
   height: 30px;
   width: 30px;
   box-shadow: 1px 1px 1px;
@@ -58,9 +56,9 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px*/
-  background-color: #f7a44c;
+  background-color: #ff8400;
   border: 1px solid black;
-  border-radius: 100%; /*Gives the pieces the circular shape*/
+  border-radius: 50%; 
   height: 30px;
   width: 30px;
   box-shadow: 1px 1px 1px;
@@ -73,9 +71,9 @@ body {
   background-repeat: no-repeat;
   background-position: 6px 4px;
   background-size: 30px;
-  background-color: #5e9bff;
+  background-color: #0062ff;
   border: 2px solid black;
-  border-radius: 100%; /*Gives the pieces the circular shape*/
+  border-radius: 50%; 
   height: 43px;
   width: 43px;
   box-shadow: 1px 1px 1px;
@@ -88,9 +86,9 @@ body {
   background-repeat: no-repeat;
   background-position: 6px 4px;
   background-size: 30px;
-  background-color: #f7a44c;
+  background-color: #ff8400;
   border: 2px solid black;
-  border-radius: 100%; /*Gives the pieces the circular shape*/
+  border-radius: 50%; 
   height: 43px;
   width: 43px;
   box-shadow: 1px 1px 1px;
@@ -128,13 +126,13 @@ body {
 .studentP1:hover, .masterP1:hover
 {
   box-shadow: 2px 2px 1px;
-  background-color: #476cff;
+  background-color: #b4c3ff;
 }
 
 .studentP2:hover, .masterP2:hover
 {
   box-shadow: 2px 2px 1px;
-  background-color: #ff7e44;    
+  background-color: #ffcdb6;    
 }
 
 #restart
@@ -145,12 +143,12 @@ body {
   left: 91%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: #bd9658;
-  background-color: rgba(189, 150, 88, 0.5);
-  border-radius: 100%;
+  background-color: #cdcdcd;
+  background-color: rgba(198, 198, 198, 0.5);
+  border-radius: 10%;
   box-shadow: 1px 1px 1px;
   text-align: center;
-  color: brown;
+  color: rgb(138, 53, 53);
   font-family: 'Arial';
   line-height: 60px;
   z-index: -2;
@@ -169,12 +167,12 @@ body {
   left: 9%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: #bd9658;
-  background-color: rgba(189, 150, 88, 0.5);
-  border-radius: 100%;
+  background-color: #cdcdcd;
+  background-color: rgba(198, 198, 198, 0.5);
+  border-radius: 10%;
   box-shadow: 1px 1px 1px;
   text-align: center;
-  color: brown;
+  color: rgb(138, 53, 53);
   font-family: 'Arial';
   line-height: 60px;
   z-index: -2;
