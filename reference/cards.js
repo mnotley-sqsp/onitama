@@ -149,7 +149,7 @@ class CardList {
         return this.cardMoves[card]
     
     }
-
+// Shuffle Cards
     shuffleCards() {
         
         getRandomNumber = function(min, max){

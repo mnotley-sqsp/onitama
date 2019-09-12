@@ -52,7 +52,7 @@ class startGame {
                     //Set new div with class and id from startingSquares array
                     newElem.setAttribute('class', startingSquares[i].div_class);
                     newElem.setAttribute('id', startingSquares[i].div_id);
-                    //Added else case.
+                    //Added else case to handle opp stuff
                     pieceSquare.appendChild(newElem);
                 }
                 
